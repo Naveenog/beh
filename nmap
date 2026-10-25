@@ -1,0 +1,52 @@
+
+EXERCISE 7: Network Scanning with Nmap
+Date: 14. Aug. 2026
+----------------------------------------------------------------------------------------------------------------
+Aim: To study and perform network scanning using Nmap to discover hosts, open ports, and
+services.
+Tools Required: Kali Linux, Metasploitable2, Nmap.
+Theory:
+Nmap (Network Mapper) is a free, open-source tool for network discovery and security
+auditing. It is used to:
+ Discover live hosts on a network
+ Identify open ports
+ Detect operating systems and service versions
+ Perform vulnerability scanning using NSE scripts
+Common Scan Types:
+ TCP SYN Scan (-sS): Stealthy, default for root.
+ TCP Connect Scan (-sT): Full connection, used without root.
+ UDP Scan (-sU): Scans UDP ports.
+ Version Detection (-sV): Identifies service versions.
+ OS Detection (-O): Identifies operating system.
+Procedure:
+1. Find the target IP:
+ifconfig
+Assume target is 192.168.56.101.
+2. Basic scan:
+nmap 192.168.56.101
+3. Scan specific ports:
+nmap -p 21,22,23,80 192.168.56.101
+4. Scan all ports:
+nmap -p- 192.168.56.101
+5. Service version detection:
+nmap -sV 192.168.56.101
+USC24301J, Basics of Ethical Hacking for Cyber Security
+15
+6. OS detection:
+sudo nmap -O 192.168.56.101
+7. Aggressive scan:
+sudo nmap -A 192.168.56.101
+8. Save output:
+nmap -sV -oN nmap_scan.txt 192.168.56.101
+Observation:
+Port State Service Version
+21 Open FTP vsftpd 2.3.4
+22 Open SSH OpenSSH 4.7p1
+23 Open Telnet Linux telnetd
+25 Open SMTP Postfix smtpd
+80 Open HTTP Apache httpd 2.2.8
+139 Open NetBIOS Samba
+445 Open SMB Samba 3.x
+3306 Open MySQL MySQL 5.0.51a
+Result: Nmap was used successfully to discover open ports and running services on
+Metasploitable2. This information is critical for identifying potential vulnerabilities.

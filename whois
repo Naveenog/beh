@@ -1,0 +1,38 @@
+
+EXERCISE 8: WHOIS Lookup
+Date: 18. Aug.2026
+----------------------------------------------------------------------------------------------------------------
+Aim: To study and perform WHOIS lookup to gather domain registration information.
+Tools Required: Kali Linux terminal, WHOIS utility, internet connection.
+Theory:
+WHOIS is a query and response protocol used to query databases that store registered users
+of domain names, IP addresses, and autonomous systems. It provides:
+ Domain registrar
+ Registration and expiry dates
+ Name servers
+ Registrant contact information
+ Administrative and technical contacts
+Procedure:
+1. Check if WHOIS is installed:
+whois --version
+If not installed:
+sudo apt install whois
+2. Perform WHOIS lookup:
+whois example.com
+3. Look up IP address:
+whois 93.184.216.34
+4. Save output:
+whois example.com > whois_output.txt
+USC24301J, Basics of Ethical Hacking for Cyber Security
+17
+Observation:
+Field Value
+Domain Name EXAMPLE.COM
+Registrar RESERVED-Internet Assigned Numbers Authority
+Creation Date 1995-08-14
+Expiry Date 2025-08-13
+Name Server A.IANA-SERVERS.NET
+Name Server B.IANA-SERVERS.NET
+Registrant Organization Internet Assigned Numbers Authority
+Result: WHOIS lookup was performed successfully. Domain registration details, name
+servers, and contact information were retrieved.

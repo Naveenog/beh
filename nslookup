@@ -1,0 +1,33 @@
+EXERCISE 11: nslookup
+Date: 27. Aug. 2026
+----------------------------------------------------------------------------------------------------------------
+Aim: To study and use nslookup for DNS queries and name resolution.
+Tools Required: Kali Linux terminal, nslookup utility.
+Theory:
+nslookup (Name Server Lookup) is a tool for querying DNS servers to obtain domain name
+or IP address mapping. It can perform:
+ Forward lookup: Domain to IP
+ Reverse lookup: IP to domain
+ Query specific record types: A, MX, NS, TXT
+Procedure:
+1. Basic lookup:
+nslookup example.com
+2. Reverse lookup:
+nslookup 93.184.216.34
+3. Query specific DNS server:
+nslookup example.com 8.8.8.8
+4. Interactive mode:
+nslookup
+> set type=mx
+> example.com
+> set type=ns
+> example.com
+> exit
+Observation:
+Query Type Result
+nslookup example.com A 93.184.216.34
+nslookup 93.184.216.34 PTR example.com
+set type=mx MX 0 .
+set type=ns NS a.iana-servers.net
+Result: nslookup was used successfully for forward and reverse DNS lookups. Different
+record types were queried.

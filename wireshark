@@ -1,0 +1,47 @@
+
+EXERCISE 12: Packet Capture with Wireshark
+Date: 31. Aug. 2026
+----------------------------------------------------------------------------------------------------------------
+Aim: To study and use Wireshark to capture and analyse network packets.
+Tools Required: Kali Linux, Wireshark, Metasploitable2.
+Theory:
+Wireshark is a network protocol analyser that captures and displays network traffic in real
+time. It is used for:
+ Troubleshooting network issues
+ Analysing protocols
+ Detecting suspicious traffic
+ Learning network behaviour
+Key Features:
+ Live packet capture
+ Display filters
+ Protocol dissection
+ Follow TCP/UDP streams
+Procedure:
+1. Start Wireshark:
+sudo wireshark
+2. Select interface (e.g., eth0).
+3. Start capture.
+4. Generate traffic:
+ping 192.168.56.101
+5. Apply display filters:
+USC24301J, Basics of Ethical Hacking for Cyber Security
+26
+o icmp – Show only ICMP
+o tcp.port == 80 – HTTP traffic
+o ip.addr == 192.168.56.101 – Traffic to/from target
+o http – HTTP requests/responses
+6. Stop capture and analyse.
+7. Save capture as .pcapng.
+Observation:
+Filter Packets Captured Observation
+icmp 8 Echo
+request/reply
+tcp.port == 80 45 HTTP GET
+requests
+ip.addr == 192.168.56.101 120 All traffic
+to/from target
+http 20 HTTP headers
+visible
+Result: Wireshark was used successfully to capture and analyse network traffic. Different
+filters were applied to isolate specific packet types.
+-------------------------------------------------------------------------------

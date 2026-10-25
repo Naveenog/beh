@@ -1,0 +1,62 @@
+
+EXERCISE 6: Basic Linux Commands
+Date: 10. Aug. 2026
+----------------------------------------------------------------------------------------------------------------
+Aim: To study and practice basic Linux commands required for ethical hacking.
+Tools Required: Kali Linux terminal.
+Theory:
+Linux commands are essential for navigating the file system, managing files, and running
+tools. Ethical hackers must be comfortable with the command line.
+Procedure:
+# Navigation
+pwd # Print working directory
+ls # List files
+ls -la # List all files with details
+cd /etc # Change directory
+cd .. # Go back one level
+# File Management
+mkdir lab # Create directory
+touch test.txt # Create empty file
+cp test.txt copy.txt # Copy file
+mv copy.txt /tmp/ # Move file
+rm test.txt # Remove file
+cat /etc/passwd # View file contents
+nano test.txt # Edit file
+# Permissions
+chmod 755 test.txt # Change permissions
+chown kali test.txt # Change owner
+# System Information
+whoami # Current user
+id # User ID and groups
+uname -a # System information
+hostname # System name
+ip a # IP address
+ifconfig # Network interfaces
+USC24301J, Basics of Ethical Hacking for Cyber Security
+13
+df -h # Disk usage
+free -h # Memory usage
+top # Running processes
+ps aux # All processes
+# Networking
+ping google.com # Test connectivity
+netstat -tuln # Open ports
+ss -tuln # Socket statistics
+# Package Management
+sudo apt update # Update package list
+sudo apt upgrade # Upgrade packages
+sudo apt install nmap # Install package
+# User Management
+sudo adduser student # Add user
+sudo passwd student # Set password
+su - student # Switch user
+Observation:
+Command Purpose Output Summary
+pwd Show current directory /home/kali
+ls -la List all files Shows permissions, owner, size
+whoami Current user kali
+ip a IP address 192.168.56.102
+df -h Disk usage Shows mounted filesystems
+ps aux Running processes List of processes
+Result: Basic Linux commands were practiced successfully. These commands are essential
+for navigating the file system and running tools in Kali Linux.

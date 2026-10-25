@@ -1,0 +1,31 @@
+EXERCISE 10: Traceroute
+Date: 24. Aug. 2026
+----------------------------------------------------------------------------------------------------------------
+Aim: To study and use the traceroute command to trace the path packets take to a destination.
+Tools Required: Kali Linux, terminal, internet connection.
+Theory:
+Traceroute is a network diagnostic tool that shows the route (path) packets take from source
+to destination. It uses ICMP or UDP packets with increasing TTL (Time To Live) values.
+Each router that decrements TTL to zero sends back an ICMP "Time Exceeded" message,
+revealing its IP address.
+Procedure:
+1. Basic traceroute:
+traceroute example.com
+2. Traceroute using ICMP:
+traceroute -I example.com
+3. Traceroute using TCP:
+sudo traceroute -T example.com
+4. Limit hops:
+traceroute -m 10 example.com
+5. Traceroute to Metasploitable2:
+traceroute 192.168.56.101
+USC24301J, Basics of Ethical Hacking for Cyber Security
+22
+Observation:
+Hop IP Address Hostname Time (ms)
+1 192.168.1.1 router.local 1.2
+2 10.0.0.1 isp-gateway 5.4
+3 172.16.0.1 backbone 12.3
+4 93.184.216.34 example.com 25.6
+Result: Traceroute was used successfully to trace the path packets take to reach a destination.
+The number of hops and latency at each hop were recorded.
